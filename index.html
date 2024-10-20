@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korte's Blog</title>
+    <link rel="stylesheet" href="./styles/navigation.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .nav-image {
+            width: 100%;
+            height: auto;
+        }
+        .nav-link-image {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .immediate-surround {
+            padding-top: 15px;
+        }
+        .immediate-surround a {
+            color: black;
+            text-decoration: none;
+            border: none;
+        }
+        .immediate-surround:hover {
+            /* background-color: rgb(118, 118, 118); */
+            border: 2px solid black;
+        }
+        .color-backing {
+            margin: 0;
+            height: 200vh;
+            background: linear-gradient(135deg, #ff7e5f, #7bedfe);
+            background-attachment: fixed;
+            transition: background 0.3s ease;
+        }
+</style>
+<body>
+    <div class="color-backing">
+    <nav class="navbar navbar-expand-lg navbar-light custom-background">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./cv-info.html">CV Information</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about.html">About me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 landing-sub-section">
+        <h2 class="text-center">Korte's Blog</h2>
+        <p class="text-center">A visual representation of my goals and progress</p>
+    </div>
+
+    <div class="container">
+        <div class="row text-center mt-5">
+            <div class="col-md-6 immediate-surround">
+                <a class="image-links" href="./cv-info.html">
+                    <img src="./media/resume-screenshot.png" alt="Image of a resume" class="nav-image">
+                    <div class="nav-link-image">CV Information</div>
+                </a>
+            </div>
+            <div class="col-md-6 immediate-surround">
+                <a class="image-links" href="./projects.html">
+                    <img src="./media/code-screenshot.png" alt="Image of code source" class="nav-image">
+                    <div class="nav-link-image">Projects</div>
+                </a>
+            </div>
+        </div>
+        <div class="row text-center mt-5">
+            <div class="col-md-6 immediate-surround">
+                <a class="image-links" href="./about.html">
+                    <img src="./media/nick-screenshot.png" alt="Photo of Nick" class="nav-image">
+                    <div class="nav-link-image">About Nick</div>
+                </a>
+            </div>
+            <div class="col-md-6 immediate-surround">
+                <a class="image-links" href="./contact.html">
+                    <img src="./media/contact-me-screenshot.png" alt="Contact Images" class="nav-image">
+                    <div class="nav-link-image">Contact</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</div>
+</body>
+</html>

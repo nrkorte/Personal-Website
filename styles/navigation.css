@@ -1,0 +1,18 @@
+.custom-background {
+    background-color: #a8a8a8;
+}
+.navbar-title {
+    flex-grow: 0;
+    text-align: center;
+}
+.nav-item.active {
+    background-color: #cecece;
+    border-radius: 12px;
+}
+.nav-item {
+    padding-top: -10px;
+}
+.nav-item:hover {
+    background-color: #c9c0ffb0;
+    border-radius: 12px;
+}

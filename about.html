@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="./styles/navigation.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<style>
+    body {
+        margin: 0;
+    }
+    .full-section {
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 2rem;
+        text-align: center;
+    }
+    .section-1 {
+        display: flex;
+        background-color: #ff7e5f;
+        transition: transform 0.5s ease;
+    }
+    .photo {
+        max-width: 400px;
+        position: relative;
+    }
+    .photo-left {
+        left: -5%;
+        top: 25%;
+        transform: translateY(-50%);
+    }
+    .photo-right {
+        right: -5%;
+        top: 25%;
+        transform: translateY(-50%);
+    }
+    .section-2 {
+        background-color: #feb47b;
+        transition: transform 0.5s ease;
+    }
+    .section-3 {
+        background-color: #6c757d;
+        transition: transform 0.5s ease;
+    }
+    .hobby-container {
+        width: 30%;
+        margin: 20px;
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 20px;
+        border-radius: 10px;
+        transition: transform 0.3s;
+        z-index: 1000;
+    }
+    .hobby-container:hover {
+        transform: scale(1.05);
+    }
+    .hobby-content {
+        display: none; /* Initially hidden */
+        position: relative;
+        z-index: 100; /* Lower than the hobby containers */
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .section-extra {
+        height: fit-content !important;
+        background-color: #feb47b;
+        margin-top: -150px;
+    }
+    .hobby-content div p {
+        font-size: medium;
+    }
+    .flex-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 20px;
+    }
+
+    .goal-container {
+        flex: 1 1 calc(30% - 20px);
+        margin: 10px;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s;
+        height: 80vh;
+    }
+    .goal-container p {
+        font-size: medium;
+    }
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light custom-background">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./cv-info.html">CV Information</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./about.html">About me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid full-section section-1">
+        <img src="./media/band-photo.jpeg" alt="Band Photo" class="photo photo-left">
+        <h2>A Little More About Me</h2>
+        <img src="./media/skiing-photo.jpg" alt="Skiing Photo" class="photo photo-right">
+    </div>
+    
+    <div class="container-fluid full-section section-2">
+        <br>
+        <h2>My Hobbies</h2>
+        <p>Click any of them to expand!</p>
+
+        <div class="d-flex justify-content-center">
+            <div class="hobby-container" onclick="toggleHobby('music')">
+                <h3>Music</h3>
+                <img src="./media/band-photo.jpeg" alt="Music" width="250">
+            </div>
+            <div class="hobby-container" onclick="toggleHobby('videoGames')">
+                <h3>Video Games</h3>
+                <img src="./media/video-games.jpg" alt="Video Games" width="250">
+            </div>
+            <div class="hobby-container" onclick="toggleHobby('sports')">
+                <h3>Sports</h3>
+                <img src="./media/skiing-photo.jpg" alt="Sports" width="250">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid full-section section-extra hobby-content" id="hobby-content">
+            
+    </div>
+
+    <div class="container-fluid full-section section-3">
+        <h2>Future Goals</h2>
+        <div class="flex-container">
+            <div class="goal-container">
+                <h5>Cyber Security Professional</h5><br>
+                <p>An aspiration of mine is to become a full-stack cyber security professional. I want to be up to date on all modern trends and strategies for securing, transferring, and acquiring information. Currently the market is in dire need of new ways to secure information and ensure that loose ends do not cause massive data leaks, and I believe I can help. I'm currently studying to get my compTIA A+ certification and plan to get my compTIA security+ and PenTest certifications next.</p>
+            </div>
+            <div class="goal-container">
+                <h5>Stage Presence</h5>
+                <p>As a musician I've always wanted to make it to the stage. I love rock and metal music and predict for myself that in a few years I will be professional enough to play on stage at a small venue. There are so many challenges to overcome before I will be ready but I am persistent and have always dreamed of it from the first moment I bought my first keyboard from a pawn shop.</p>
+            </div>
+            <div class="goal-container">
+                <h5>Sustainability</h5>
+                <p>A passion of mine relates to one of earth's biggest problems. I want to help this world in any way I can and I try my best to do my part. I recycle appropriately, have removed most plastic waste from my house, push for alternative energy solutions, and fight against policies that I feel hurt this world. In my "forever home" I will make sure that my house uses as many renewable resources as possible to make my house thrive.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const hobbies = {
+            music: `
+                <div id="music">
+                    <h2>Music</h2>
+                    <p> In my free time I am constantly practicing instruments like guitar and drums and writing music with my friends. Below is an example of a recent project I wrote that does not have lyrics yet. It is a rock song inspired by many artists and is titled <i>Lazy</i>.</p>
+                    <audio controls>
+                        <source src="./media/Lazy.wav" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            `,
+            videoGames: `
+                <div id="videoGames">
+                    <h2>Video Games</h2>
+                    <p>I love playing video games. I really enjoy single player games and have been playing a lot of the classic halo campaigns recently. I also really enjoy survival games and endless onslaught games like CoD Zombies.</p>
+                </div>
+            `,
+            sports: `
+                <div id="sports">
+                    <h2>Sports</h2>
+                    <p>As this website is being authored, the ski season is approaching again and the slopes are going to be opening up in less than a month. Skiing, golfing, hiking, and occasionally mountain biking are the sports that I have enjoyed all my life!</p>
+                </div>
+            `
+        };
+
+        function toggleHobby(hobby) {
+            const contentDiv = document.getElementById('hobby-content');
+            contentDiv.innerHTML = hobbies[hobby];
+            contentDiv.style.display = 'block';
+            contentDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function closeHobby() {
+            const contentDiv = document.getElementById('hobby-content');
+            contentDiv.style.display = 'none';
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

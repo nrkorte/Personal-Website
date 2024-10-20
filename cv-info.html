@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Information</title>
+    <link rel="stylesheet" href="./styles/navigation.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<style>
+        .body-replacement {
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            background-color: #f8f9fa;
+        }
+        h2 {
+            margin-top: 30px;
+        }
+        .section-header {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light custom-background">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./cv-info.html">CV Information</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about.html">About me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="body-replacement">
+    <div class="container">
+        <h1 class="text-center">Nicholas Korte</h1>
+        <p class="text-center"><a href="mailto:etroknick@gmail.com">Etroknick@gmail.com</a> | <a href="tel:+17204568544">+1 (720) 456-8544</a> | <a target="_blank" href="https://www.linkedin.com/in/nicholas-korte/">LinkedIn Profile</a> | <a target="_blank" href="https://github.com/nrkorte">GitHub Profile</a></p>
+
+        <h2>Work Experience</h2>
+        <div>
+            <div class="section-header">IT Lab Systems Analyst Intern - Corden Pharma Colorado</div>
+            <p><em>May 2023 - Aug 2023</em></p>
+            <ul>
+                <li>Provided client support on lab system operation and resolved malfunctions with systems and programs through
+                    troubleshooting and network analysis. Resolving over 1000 tickets in 3 months.</li>
+                <li>Implemented C# scripts to run when user tickets were submitted to give folder and file access to users in
+                    Windows Group Policy Management. Saving the IT department staff more than 4 hours each week.</li>
+                <li>Used LabVantage to streamline automatic processes to perform repetitive tasks with high accuracy.</li>
+            </ul>
+        </div>
+        <div>
+            <div class="section-header">IT Intern - TKC Construction</div>
+            <p><em>May 2021 - Aug 2021</em></p>
+            <ul>
+                <li>Resolved network and system errors while upholding security practices and helped implement a DMZ on the
+                    network to bifurcate government contracts from public contracts.</li>
+                <li>Wrote efficient Java programs to parse documents, retrieve specific information, and format it for contractors' use.</li>
+            </ul>
+        </div>
+
+        <h2>Education</h2>
+        <div>
+            <div class="section-header">Bachelor's of Science in Computer Science - Colorado State University</div>
+            <p><em>Aug 2020 - May 2024</em></p>
+            <p>Coursework: Computer Architecture, Operating Systems, Big Data, Algorithms, Linear Algebra, Calculus, Cybersecurity, Data Structures, Blockchain Principles, DBMS</p>
+        </div>
+
+        <h2>Skills</h2>
+            <p>Languages: Python, Java, C++, Typescript, MySQL, Hadoop, Spark, HTML/CSS</p>
+            <p>Frameworks: Node.js</p>
+            <P>Developer Tools: Git, Docker, VS Code, Jenkins, PyCharm, IntelliJ, Eclipse, MongoDB, Apache Tomcat, YARN</P>
+
+        <h2>Projects</h2>
+        <div>
+            <div class="section-header">TF-IDF Summary Generator | Java, Apache Hadoop (HDFS), MapReduce</div>
+            <ul>
+                <li>Developed a program to calculate the Term Frequency - Inverse Document Frequency of every unigram in a
+corpus of tens of thousands of documents to determine a summary of each document.</li>
+
+                <li>Used Java and Apache Hadoop to connect to and run on a cluster of servers at CSU using YARN for a runtime of
+                less than 30 seconds.</li>
+
+                <li>Achieved 95.2% accuracy on summaries for all documents, regardless of size.</li>
+            </ul>
+        </div>
+        <div>
+            <div class="section-header">Symmetric Key File Encryptor | C++, CMake</div>
+            <ul>
+                <li>Developed a program to do symmetric block and stream cipher encryptions on text files on a 16-byte key in C++.</li>
+                <li>Allows users to encrypt and decrypt the files with access to the same key to ensure safe delivery of information across devices.</li>
+            </ul>
+        </div>
+        <div>
+            <div class="section-header">Andy's World | C#, Unity, Blender</div>
+            <ul>
+                <li>Created a 3D environment where a player playing as Andy, a cat, can run around knocking things off of counters
+                    and scratching things to earn points within a time limit.</li>
+                <li>Used C# to develop scripts for character movement, camera movement, physics simulation, light angles, etc.</li>
+                <li>Built a blender animated cat from scratch with full functionality including running, walking, scratching,   jumping, and licking.</li>
+            </ul>
+        </div>
+
+        <h2>References</h2>
+        <p>Available upon request.</p>
+    </div>
+
+    <div class="container text-center mt-5">
+        <h2>Download Nick's Resume</h2>
+        <p>A downloadable version of this resume can be found here:</p>
+        <a href="./media/Nick_Resume.pdf" class="btn btn-primary" download>Download Resume</a>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</div>
+</body>
+</html>
