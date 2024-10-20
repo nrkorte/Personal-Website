@@ -48,26 +48,35 @@
         transition: transform 0.5s ease;
     }
     .hobby-container {
-        width: 30%;
-        margin: 20px;
-        cursor: pointer;
-        background: rgba(255, 255, 255, 0.2);
-        padding: 20px;
-        border-radius: 10px;
-        transition: transform 0.3s;
-        z-index: 1000;
-    }
-    .hobby-container:hover {
-        transform: scale(1.05);
-    }
-    .hobby-content {
-        display: none; /* Initially hidden */
-        position: relative;
-        z-index: 100; /* Lower than the hobby containers */
-        color: white;
-        padding: 20px;
-        border-radius: 10px;
-    }
+    width: 30%;
+    margin: 20px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s, opacity 0.5s, transform 0.5s; /* Added opacity transition */
+    z-index: 1000;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Start from 50px below */
+}
+
+.hobby-container.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
+}
+
+.hobby-container:hover {
+    transform: scale(1.05);
+}
+
+.hobby-content {
+    display: none; /* Initially hidden */
+    position: relative;
+    z-index: 100; /* Lower than the hobby containers */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
     .section-extra {
         height: fit-content !important;
         background-color: #e9a979;
@@ -211,6 +220,31 @@
             const contentDiv = document.getElementById('hobby-content');
             contentDiv.style.display = 'none';
         }
+
+        document.addEventListener("DOMContentLoaded", function() {
+        const hobbyContainers = document.querySelectorAll('.hobby-container');
+        const section = document.querySelector('.section-2');
+        const hobbyContent = document.getElementById('hobby-content');
+
+        const checkVisibility = () => {
+            const sectionTop = section.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            hobbyContainers.forEach((container, index) => {
+                if (sectionTop < windowHeight - (index + 1) * 100) {
+                    setTimeout(() => {
+                        container.classList.add('visible');
+                    }, index * 300);
+                } else {
+                    container.classList.remove('visible');
+                    hobbyContent.innerHTML = '';
+                }
+            });
+        };
+
+        window.addEventListener('scroll', checkVisibility);
+        checkVisibility();
+    });
     </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
