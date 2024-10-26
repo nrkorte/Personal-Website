@@ -4,9 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
-    <link rel="stylesheet" href="./styles/navigation.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/navigation.css">
+
 </head>
+    <style>
+        .project-box {
+            border-radius: 15px;
+            border: 2px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.2s;
+        }
+
+        .project-box:hover {
+            border: 2px solid #c9c0ffb0;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .project-description {
+            font-size: 0.9rem;
+            color: #555;
+        }
+    </style>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light custom-background">
         <div class="container">
@@ -35,8 +59,28 @@
         </div>
     </nav>
 
-    <h1 class="text-center">Coming soon!</h1>
-    <p class="text-center">This page was last updated on 10/20/2024</p>
+    <div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="project-box">
+                <div class="project-title">TF-IDF Summary Generator</div>
+                <div class="project-description">A summary generator that uses Java and Apache Hadoop</div>
+                <a href="./projects/tf-idf.html" class="btn btn-secondary mt-2">View Project</a>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="project-box">
+                <div class="project-title">Symmetric Key Stream and Block Encryptor</div>
+                <div class="project-description">A C++ program capable of encrypting and decrypting a text file.</div>
+                <a href="./projects/encryption.html" class="btn btn-secondary mt-2">View Project</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br><br>
+<p class="text-center" style="font-size: small;">More projects coming soon!</p>
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
