@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Project Summary</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/navigation.css">
+    <style>
+        body {
+            height: 100vh;
+            overflow: hidden;
+        }
+        .project-summary {
+            height: 30%;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+        .flex-container {
+            display: flex;
+            height: 70%;
+        }
+        .blog-list {
+            width: 30%;
+            overflow-y: scroll;
+            border-right: 1px solid #ddd;
+            padding: 10px;
+            height: 60vh;
+        }
+        .blog-content {
+            width: 70%;
+            padding: 20px;
+            overflow-y: scroll;
+            height: 60vh;
+        }
+        .blog-post {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .blog-post:hover {
+            background-color: #e9ecef;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light custom-background">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../cv-info.html">CV Information</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about.html">About me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<div class="container mt-3">
+    <div class="project-summary">
+        <h2>Hashing Algorithm</h2>
+        <p>A Java project showing how hashing algorithms work from scratch. Hashing algorithms are a faster way to search for things compared to using an unsorted list.</p>
+        <a href="https://github.com/your-repo" class="btn btn-secondary" target="_blank">View on GitHub</a>
+    </div>
+
+    <div class="flex-container">
+        <div class="blog-list">
+            <h4>Blog Posts</h4>
+            <div class="blog-post" onclick="showPost('HashTable')">The HashTable Class</div>
+
+            
+            <div id="HashTable" hidden>
+                <p><b>Summary of changes:</b> Defining the class for our hash table to store information.</p>
+                <p><b>Date: 10/27/2024</b> </p>
+                <br>
+                <p><b>Thought Processes:</b><br>
+                    Initializing this project starts off with the table structure itself. This includes the constructor and any variables we need to store information.
+                </p>
+                <div class="d-flex justify-content-center">
+                    <img src="../media/hash-table-constructor.png" alt="Photo of constructor and class definition" class="img-fluid">
+                </div>
+                <br>
+                <p><b>Info: </b>A hashtable can be made in many ways, in my version I am creating here I have chosen to create a two-dimensional array to represent our table. The first array or the "buckets" will be an ArrayList that holds our lists of values in them. The second dimension of the array will be a LinkedList, which will contain the individual values.</p>
+                <br>
+                <p>The constructor is very simple. It initializes the buckets array and sets all values inside of the array to null. I do this so that when I try to get an index later on, I do not get an IndexOutOfBounds error if I try to access an uninitialized LinkedList.</p>
+                <br>
+                <p>Above the constructor you can see there are a few variables that we use. Without going into the math behind why prime numbers are beneficial for hashing, all you need to know is that it helps distribute our numbers across our table evenly. So...</p>
+                <ul class="list-unstyled">
+                    <li><b>PRIME_NUMBER</b>: Integer used to help spread out our numbers across the table.</li>
+                    <li><b>Buckets</b>: This is a list of a list of numbers to create our table structure.</li>
+                    <li><b>maxSize</b>: The largest the table is allowed to be, this can be changed later which is why it is not a "final" variable.</li>
+                    <li><b>full_buckets</b>: The amount of buckets that have at least one value inside of it, this variable help determine when we need to increase table size.</li>
+                </ul>
+            </div>
+            
+
+
+
+        </div>
+        <div class="blog-content">
+            <h4>Blog Post Content</h4>
+            <hr>
+            <p id="postContent">Select a blog post to see the content here.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showPost(content) {
+        document.getElementById('postContent').innerHTML = `<h5>${document.getElementById(content).id.replace(/-/g, ' ')}</h5><p>${document.getElementById(content).innerHTML}</p>`;
+    }
+    window.onload = function() {
+        showPost('HashTable');
+    }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
