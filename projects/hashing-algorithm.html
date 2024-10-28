@@ -154,11 +154,11 @@
                     <img src="../media/hash-math.png" alt="Formula for calculating hash value" class="img-fluid">
                 </div><br>
                 <p>
-                    The above formula shows how we use all the inforamtion we have to get the hash value. In this formula, PRIMENUMBER is the PRIME_NUMBER value we stored at the top of this class and never changes. "n" is the number of characters in our input, the key and the value we are concatenating. Ord(c<sub>i</sub>) represents the ascii value of each character in our input. And finally, tableSize is the size of the current table.
+                    The above formula shows how we use all the inforamtion we have to get the hash value. In this formula, PRIMENUMBER is the PRIME_NUMBER value we stored at the top of this class and never changes. "n" is the number of characters in our input, the key and the value we are concatenating. Ord(c<sub>i</sub>) represents the ascii value of each character in our input. And finally, tableSize is the size of the current table. This calculation is done one each char in our string to get the hash value.
                 </p>
                 <br>
                 <p>
-                    When the calculation is done, we take the absolute value of our final answer and run it mod it one more time to make sure it fits into our table. This is our hash value.
+                    When the calculation is done, we take the absolute value of our final answer and mod it one more time to make sure it fits into our table. This is our hash value.
                 </p>
             </div>
             
