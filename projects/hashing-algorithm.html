@@ -81,13 +81,14 @@
     <div class="project-summary">
         <h2>Hashing Algorithm</h2>
         <p>A Java project showing how hashing algorithms work from scratch. Hashing algorithms are a faster way to search for things compared to using an unsorted list.</p>
-        <a href="https://github.com/your-repo" class="btn btn-secondary" target="_blank">View on GitHub</a>
+        <a href="https://github.com/nrkorte/Custom-Hash" class="btn btn-secondary" target="_blank">View on GitHub</a>
     </div>
 
     <div class="flex-container">
         <div class="blog-list">
             <h4>Blog Posts</h4>
             <div class="blog-post" onclick="showPost('HashTable')">The HashTable Class</div>
+            <div class="blog-post" onclick="showPost('Insert')">Insert</div>
 
             
             <div id="HashTable" hidden>
@@ -112,6 +113,53 @@
                     <li><b>maxSize</b>: The largest the table is allowed to be, this can be changed later which is why it is not a "final" variable.</li>
                     <li><b>full_buckets</b>: The amount of buckets that have at least one value inside of it, this variable help determine when we need to increase table size.</li>
                 </ul>
+            </div>
+            <div id="Insert" hidden>
+                <p><b>Summary of changes:</b> Created the insert and the hash method.</p>
+                <p><b>Date: 10/27/2024</b> </p>
+                <br>
+                <p><b>Thought Processes:</b><br>
+                    In these methods I am writing the code that will calculate the index for where a certain value will go and then placing that value in the hash table.
+                </p>
+                <hr>
+                <h4 class="text-center">The insert method</h4>
+                <div class="d-flex justify-content-center">
+                    <img src="../media/insert-method.png" alt="Photo of insert method" class="img-fluid">
+                </div>
+                <br>
+                <p>
+                    The first thing we do in the insert method is compute the hash value in relation to the value we are trying to store, I will cover the hash method soon. Following this we need to place our value into the hash table in the appropriate index. First we check to see if the bucket is still empty (or null), if it is we create a new LinkedList in that bucket and increase the "full_buckets" global variable to see if we need to resize. If we do, the insert method will call the resize method.
+                </p>
+                <br>
+                <p>
+                    Now we have to check again whether or not the index is currently empty, this might seem redundant to do twice, but when we take a look at the resize method, it will all make sense. If it's empty, make a new LinkedList in the bucket and add the value, if it is not, loop to the end using an iterator and then append it to the end of the LinkedList. This hash table does not allow for duplicate values, so if we see a value we already have in the table, we will return false and nothing will be added.
+                </p>
+                <hr>
+                <h4 class="text-center">The hash method</h4>
+                <p>
+                    This method is used to calculate a hash value that tells us where in our table our value is stored in O(1) time.
+                </p>
+                <p>
+                    <b>Info: </b> Think about this. You want to find out if there is a user ID on your database, but your database generates random user IDs that aren't stored in order. This means it could be in any position in the list of people you have in your database. The only option to find that user would be to search every. single. user! That would take forever if there are millions of users. Instead if each user ID relates to a specific hash value that we calculate, you can find that user almost instantly!
+                </p>
+                <div class="d-flex justify-content-center">
+                    <img src="../media/hash-method.png" alt="Photo of insert method" class="img-fluid">
+                </div><br>
+                <br>
+                <p>
+                    Let's find out how. First and most importantly, each hashing algorithm contains a secret key that only those who wrote and use the algorithm know, and sometimes not even they know! This key is what helps us "randomize" the position on the table. It's not actually random, it's mathematical, but appears random to others. In my algorithm I take the value and the key that we've collected and concatenate them together to make this key unique to each value we pass to the method.
+                </p>
+                <br>
+                <div class="d-flex justify-content-center">
+                    <img src="../media/hash-math.png" alt="Formula for calculating hash value" class="img-fluid">
+                </div><br>
+                <p>
+                    The above formula shows how we use all the inforamtion we have to get the hash value. In this formula, PRIMENUMBER is the PRIME_NUMBER value we stored at the top of this class and never changes. "n" is the number of characters in our input, the key and the value we are concatenating. Ord(c<sub>i</sub>) represents the ascii value of each character in our input. And finally, tableSize is the size of the current table.
+                </p>
+                <br>
+                <p>
+                    When the calculation is done, we take the absolute value of our final answer and run it mod it one more time to make sure it fits into our table. This is our hash value.
+                </p>
             </div>
             
 
