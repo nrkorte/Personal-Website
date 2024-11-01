@@ -89,6 +89,7 @@
             <h4>Blog Posts</h4>
             <div class="blog-post" onclick="showPost('HashTable')">The HashTable Class</div>
             <div class="blog-post" onclick="showPost('Insert')">Insert</div>
+            <div class="blog-post" onclick="showPost('Resize')">Resize</div>
 
             
             <div id="HashTable" hidden>
@@ -154,12 +155,35 @@
                     <img src="../media/hash-math.png" alt="Formula for calculating hash value" class="img-fluid">
                 </div><br>
                 <p>
-                    The above formula shows how we use all the inforamtion we have to get the hash value. In this formula, PRIMENUMBER is the PRIME_NUMBER value we stored at the top of this class and never changes. "n" is the number of characters in our input, the key and the value we are concatenating. Ord(c<sub>i</sub>) represents the ascii value of each character in our input. And finally, tableSize is the size of the current table. This calculation is done one each char in our string to get the hash value.
+                    The above formula shows how we use all the information we have to get the hash value. In this formula, PRIMENUMBER is the PRIME_NUMBER value we stored at the top of this class and never changes. "n" is the number of characters in our input, the key and the value we are concatenating. Ord(c<sub>i</sub>) represents the ascii value of each character in our input. And finally, tableSize is the size of the current table. This calculation is done one each char in our string to get the hash value.
                 </p>
                 <br>
                 <p>
                     When the calculation is done, we take the absolute value of our final answer and mod it one more time to make sure it fits into our table. This is our hash value.
                 </p>
+            </div>
+            <div id="Resize" hidden>
+                <p><b>Summary of changes:</b>Created the resize method to allocate new space for additional entires in the table.</p>
+                <p><b>Date: 10/29/2024</b> </p>
+                <br>
+                <p><b>Thought Processes:</b><br>
+                    This method increases the size of the table by 50% any time that 75% or more of the buckets are full. A bucket being full means that it has at least one value stored in it.
+                </p>
+                <hr>
+                <img src="../media/resize-method.png" alt="Photo of the resize method">
+                <br>
+                <p>
+                    This function starts by redefining the current max size to 1.5 times what it was, thus creating enough buckets to store all values without as many collisions. Then, for each of those new buckets we initialize them to null too allow our future loops to know what the index bounds are.
+                </p>
+                <br>
+                <p>
+                    Next, we essentially re-insert all of the values that were in the table with the new table size. If the bucket is full, iterate over the linked list and append to the end, if not, create a new linked list and then add the value to the beginning.
+                </p>
+                <br>
+                <p>
+                    Finally, we set the global variable "buckets" to the new set of buckets we created, effectively increasing the size of our table by 50%.
+                </p>
+
             </div>
             
 
