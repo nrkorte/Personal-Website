@@ -90,6 +90,8 @@
             <div class="blog-post" onclick="showPost('HashTable')">The HashTable Class</div>
             <div class="blog-post" onclick="showPost('Insert')">Insert</div>
             <div class="blog-post" onclick="showPost('Resize')">Resize</div>
+            <div class="blog-post" onclick="showPost('Remove')">Remove</div>
+            <div class="blog-post" onclick="showPost('Testing')">Testing</div>
 
             
             <div id="HashTable" hidden>
@@ -116,7 +118,7 @@
                 </ul>
             </div>
             <div id="Insert" hidden>
-                <p><b>Summary of changes:</b> Created the insert and the hash method.</p>
+                <p><b>Summary of changes: </b>Created the insert and the hash method.</p>
                 <p><b>Date: 10/27/2024</b> </p>
                 <br>
                 <p><b>Thought Processes:</b><br>
@@ -163,7 +165,7 @@
                 </p>
             </div>
             <div id="Resize" hidden>
-                <p><b>Summary of changes:</b>Created the resize method to allocate new space for additional entires in the table.</p>
+                <p><b>Summary of changes: </b>Created the resize method to allocate new space for additional entires in the table.</p>
                 <p><b>Date: 10/29/2024</b> </p>
                 <br>
                 <p><b>Thought Processes:</b><br>
@@ -182,6 +184,37 @@
                 <br>
                 <p>
                     Finally, we set the global variable "buckets" to the new set of buckets we created, effectively increasing the size of our table by 50%.
+                </p>
+
+            </div>
+            <div id="Remove" hidden>
+                <p><b>Summary of changes: </b>Created the remove method to remove items from the hash table</p>
+                <p><b>Date: 10/27/2024</b> </p>
+                <br>
+                <p><b>Thought Processes:</b><br>
+                    The remove method is essential for hash table operations. This method will remove any elements that have been re-hashed in our table.
+                </p>
+                <img src="../media/remove-method.png" alt="Photo of the remove method">
+                <br>
+                <p>
+                    This method is quite similar to the other methods. It takes our value and hashes it, then checks each value in the bucket where it would be found, if it finds a matching value it removes it and if it is the last value in that bucket we set the bucket to have a <b>null</b> value.
+                </p>
+
+            </div>
+            <div id="Testing" hidden>
+                <p><b>Summary of changes: </b>The test suite I used to ensure 100% accuracy on my project</p>
+                <p><b>Date: 10/27/2024</b> </p>
+                <br>
+                <p><b>Thought Processes:</b><br>
+                    <i>I am not going to show the code for my test suite because there is a lot to go over but this will be a general summary of the contents of the suite.</i>
+                    <br><br>
+                    I start with testing my constructor, both making a constructor the right way and with bad paramters to see if I get the correct errors thrown.
+                    <br><br>
+                    Following this I test the hash method to ensure all values stay within the bounds of my table. Next, I test my insert method to make sure that all values are where they need to be at in the table. Additionally, I check to see for errors with bad paramters passed and what happens when I insert duplicate values.
+                    <br><br>
+                    Now I can test the resize method. Making sure that it gets called when it needs to be (when 75% of the buckets have at least one value).
+                    <br><br>
+                    Finally, I can check the remove method and make sure that the value is no longer in the table after it has been called and that my full buckets value was decreased appropriately.
                 </p>
 
             </div>
